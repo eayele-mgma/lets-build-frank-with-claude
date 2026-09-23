@@ -1,0 +1,20 @@
+{
+  // Production build. rootDir is pinned so src/index.ts compiles to
+  // dist/index.js, which is what the Dockerfile's CMD runs. Leave it unset and
+  // anything outside src/ in "include" shifts the output to dist/src/.
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "rootDir": "src",
+    "outDir": "dist",
+    "strict": true,
+    "verbatimModuleSyntax": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "types": ["node"]
+  },
+  "include": ["src/**/*.ts"]
+}

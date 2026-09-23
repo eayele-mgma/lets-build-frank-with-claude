@@ -1,0 +1,11 @@
+{
+  // Type-checks the tests too. vitest transpiles without checking types, and
+  // tsx is lenient about missing .js import extensions where tsc is not, so
+  // `npm test` runs this to catch both before the Docker build does.
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "rootDir": ".",
+    "noEmit": true
+  },
+  "include": ["src/**/*.ts", "test/**/*.ts", "vitest.config.ts"]
+}
